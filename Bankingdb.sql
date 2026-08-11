@@ -52,3 +52,32 @@ alter table customers add Date_Of_Birth date;
  drop table Account_branches;
  select * from loans;
  
+ 
+ #add primary key
+use bankingdb;
+alter table  account modify Accountid int primary key;
+alter table branches modify BranchID int primary key;
+alter table customers modify Customerid int primary key;
+alter table loans modify Loan_id int primary key;
+alter table transactions modify TransactionID int primary key;
+
+#insert in the table
+insert into customers (Customerid, First_name, last_name, email, phone, AccountCreationDate, Date_Of_Birth) 
+values (1,"Shruu","Kumbhare","shruu@gmail",213434456,"2025-07-10","2005-05-17");
+
+select * FROM CUSTOMERS;	
+ #update values
+set sql_safe_updates=0
+
+
+
+
+
+
+
+
+
+
+
+
+
