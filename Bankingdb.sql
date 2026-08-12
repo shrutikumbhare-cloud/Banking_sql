@@ -67,7 +67,27 @@ values (1,"Shruu","Kumbhare","shruu@gmail",213434456,"2025-07-10","2005-05-17");
 
 select * FROM CUSTOMERS;	
  #update values
-set sql_safe_updates=0
+set sql_safe_updates=0;
+
+use bankingdb;
+insert into customers (Customerid, First_name, last_name, email, phone, AccountCreationDate, Date_Of_Birth) 
+values  (2,"Tiya","Binekar","tiya@gmail",4565687,"2025-07-12","2007-10-18"),(3,"Himani","Kamtkar","hima@gmail",4667667,"2025-07-12","2003-08-23");
+
+
+alter table account add customerid int unique not null;
+select * from account;
+
+insert into account values
+(101,"Saving",25000,1);
+
+select * from customers;
+update customers set phone =4676656 where customerid = (1);
+
+delete from customers where customerid = 2;
+
+
+
+
 
 
 
