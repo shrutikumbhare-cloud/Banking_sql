@@ -85,6 +85,57 @@ update customers set phone =4676656 where customerid = (1);
 
 delete from customers where customerid = 2;
 
+use bankingdb;
+select * from customers;
+
+select First_name, last_name, email, phone from customers;
+
+select * from account;
+insert into account 
+values (102,"Current",20000,2),
+(103,"Saving",30000,3),
+(104,"Current",15000,4),
+(105,"saving",200000,5);
+
+select * from account
+where account_type = "saving";
+
+select * from account
+where balance >= 20000;
+
+select * from account
+where  balance between 25000 and 150000; 
+
+select * from transactions;
+
+select * from customers
+where customerid in (1,3,6);
+
+select * from customers
+where first_name  like "__r%";
+
+select * from customers
+where first_name  like "%n_";
+
+select * from customers
+order by First_name;
+
+select * from account
+order by balance desc;
+
+select distinct account_type from account;
+
+select * from account
+order by balance desc	limit 3;
+
+select * from account
+order by balance desc	limit 3 offset 2;
+
+
+
+
+
+
 
 
 
