@@ -131,6 +131,40 @@ order by balance desc	limit 3;
 select * from account
 order by balance desc	limit 3 offset 2;
 
+use bankingdb;
+select * from customers
+where first_name  like "s%";
+
+select * from customers
+where email like "%gmail%";
+
+select * from customers
+where last_name like "%kar";
+
+select * from account
+where account_type in ("saving","current");
+
+select * from customers 
+where customerid in (1,3);
+
+select * from customers
+order by last_name ;
+
+select * from account
+order by balance desc
+limit 2;
+
+select * from account 
+where account_type = "saving"
+order by balance desc;
+
+ 
+
+
+
+
+
+
 
 
 
