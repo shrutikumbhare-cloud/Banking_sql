@@ -158,13 +158,67 @@ select * from account
 where account_type = "saving"
 order by balance desc;
 
- 
+use bankingdb;
+# concat 
+select*,concat(first_name," ",last_name," ",phone) from customers;
 
+#concat_ws
+select *, concat_ws("  ",first_name,last_name,phone) from customers;
 
+#trim,length,upper,lower,mod
+#left,right,mid  
 
+#replace
+select * ,replace(first_name,"shruu","shruti") from customers;
 
+#ceil,floor,abs
 
+use bankingdb;
+select * from customers;
 
+#date-current_date, date_time-now, date_format
+select*, monthname(date_of_birth) from customers;
+select*, dayname(date_of_birth) from customers;
+select*, left(monthname(date_of_birth),3) from customers;
+select*, date_format(date_of_birth,"%d/%m/%y") from customers;
+select*, date_format(date_of_birth,"%D-%M-%Y") from customers;
+
+#DATEDIFFERENCE between the two dates
+select *, datediff(Accountcreationdate,date_of_birth) from customers;
+
+#date_add with interval 
+select*, date_add(date_of_birth, interval 5 day ) from customers;
+select*, date_sub(date_of_birth, interval 5 day ) from customers;
+
+select * from customers;
+select *, upper(first_name) from customers;
+select *, lower(first_name)as lower from customers;
+select *, length(last_name)as words from customers;
+select *, left(first_name,3) from customers;
+select *, concat(first_name,"  ",last_name) as name from customers;
+
+select * from account;
+select * from transactions;
+select round(1224.34) as value;
+select ceil(69.25) as ceiling_value;
+select floor(69.25) as ceiling_value;
+select * from customers;
+select curdate();
+select now();
+select *, year(date_of_birth) from customers;
+select *, month(date_of_birth), day(date_of_birth) from customers;
+select *, datediff(curdate(),date_of_birth) from customers;
+
+select * from account;
+select sum(balance) from account;
+select avg(balance) from account;
+select max(balance), min(balance) from account;
+select count( * ) from account;
+select account_type,sum(balance) from account
+group by account_type;
+select account_type, sum(balance) from account
+group by account_type
+having sum(balance) > 30000;
 
 
 
